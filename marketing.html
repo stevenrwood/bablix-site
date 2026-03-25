@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bablix — Real-Time Speech Translation for iPhone</title>
+<meta name="description" content="Bablix turns your iPhone into a real-time conversation translator. 10 languages, on-device speech recognition, AI-powered features. Download on the App Store.">
+<style>
+  :root { color-scheme: light dark; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: -apple-system, system-ui, 'Helvetica Neue', sans-serif;
+    color: #1c1c1e;
+    background: #fff;
+    line-height: 1.7;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body { color: #f2f2f7; background: #1c1c1e; }
+    .hero { background: linear-gradient(145deg, #1a1a3e 0%, #1c1c1e 100%); }
+    .section-alt { background: #2c2c2e; }
+    .feature-card { background: #2c2c2e; border-color: #3a3a3c; }
+    .use-case { background: #2c2c2e; border-color: #3a3a3c; }
+    .quote { color: #a1a1a6; border-color: #3a3a3c; }
+    footer { background: #111; color: #636366; }
+    footer a { color: #8e8e93; }
+  }
+
+  /* Hero */
+  .hero {
+    text-align: center;
+    padding: 80px 24px 60px;
+    background: linear-gradient(145deg, #eef2ff 0%, #f8f9fa 100%);
+  }
+
+  .hero-icon {
+    width: 100px;
+    height: 100px;
+    border-radius: 22px;
+    background: linear-gradient(135deg, #007AFF 0%, #FF3B30 100%);
+    margin: 0 auto 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 32px rgba(0, 122, 255, 0.2);
+  }
+
+  .hero-icon svg { width: 56px; height: 56px; fill: white; }
+
+  .hero h1 {
+    font-size: 44px;
+    font-weight: 700;
+    letter-spacing: -1px;
+    margin-bottom: 12px;
+  }
+
+  .hero .tagline {
+    font-size: 20px;
+    color: #636366;
+    max-width: 520px;
+    margin: 0 auto 32px;
+  }
+
+  .hero .cta {
+    display: inline-block;
+    background: #007AFF;
+    color: white;
+    font-size: 17px;
+    font-weight: 600;
+    padding: 14px 32px;
+    border-radius: 12px;
+    text-decoration: none;
+    transition: opacity 0.2s;
+  }
+
+  .hero .cta:hover { opacity: 0.85; }
+
+  .hero .cta-note {
+    display: block;
+    margin-top: 12px;
+    font-size: 14px;
+    color: #8e8e93;
+  }
+
+  /* Sections */
+  section {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 60px 24px;
+  }
+
+  .section-alt {
+    background: #f8f9fa;
+  }
+
+  .section-alt section {
+    padding: 60px 24px;
+  }
+
+  h2 {
+    font-size: 28px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 8px;
+  }
+
+  .section-sub {
+    text-align: center;
+    font-size: 16px;
+    color: #636366;
+    margin-bottom: 36px;
+  }
+
+  /* How it works */
+  .steps {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .step {
+    flex: 1;
+    min-width: 200px;
+    max-width: 240px;
+    text-align: center;
+  }
+
+  .step-num {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #007AFF;
+    color: white;
+    font-weight: 700;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 12px;
+  }
+
+  .step h3 { font-size: 17px; margin-bottom: 4px; }
+  .step p { font-size: 14px; color: #636366; }
+
+  /* Features */
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+  }
+
+  .feature-card {
+    background: #f2f2f7;
+    border: 1px solid #e5e5ea;
+    border-radius: 14px;
+    padding: 20px;
+  }
+
+  .feature-card .icon-f { font-size: 28px; margin-bottom: 8px; }
+  .feature-card h3 { font-size: 16px; margin-bottom: 4px; }
+  .feature-card p { font-size: 14px; color: #636366; margin: 0; }
+
+  /* Use cases */
+  .use-cases {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 12px;
+  }
+
+  .use-case {
+    background: white;
+    border: 1px solid #e5e5ea;
+    border-radius: 12px;
+    padding: 16px 20px;
+    text-align: center;
+    font-size: 15px;
+  }
+
+  .use-case .emoji { font-size: 28px; display: block; margin-bottom: 8px; }
+
+  /* Privacy */
+  .privacy-points {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .privacy-point {
+    text-align: center;
+    flex: 1;
+    min-width: 160px;
+  }
+
+  .privacy-point .icon-p { font-size: 32px; margin-bottom: 8px; }
+  .privacy-point h3 { font-size: 15px; margin-bottom: 2px; }
+  .privacy-point p { font-size: 13px; color: #636366; }
+
+  /* Footer */
+  footer {
+    text-align: center;
+    padding: 32px 24px;
+    background: #f2f2f7;
+    font-size: 14px;
+    color: #8e8e93;
+  }
+
+  footer a { color: #636366; text-decoration: none; margin: 0 12px; }
+  footer a:hover { text-decoration: underline; }
+
+  .footer-links { margin-bottom: 8px; }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-icon">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H5.2L4 17.2V4h16v12z" opacity="0.7"/>
+      <path d="M19 3H9c-1.1 0-2 .9-2 2v8c0 1.1.9 2 2 2h6l4 4V5c0-1.1-.9-2-2-2zm0 11.2L17.8 13H9V5h10v9.2z"/>
+    </svg>
+  </div>
+  <h1>Bablix</h1>
+  <p class="tagline">Real-time speech translation for live conversations. Speak naturally — Bablix listens, translates, and speaks the result.</p>
+  <!-- Replace # with App Store link once available -->
+  <a href="#" class="cta">Download on the App Store</a>
+  <span class="cta-note">Free with Apple Translation. Optional Claude AI upgrade.</span>
+</div>
+
+<!-- HOW IT WORKS -->
+<section>
+  <h2>How It Works</h2>
+  <p class="section-sub">Three taps. That's it.</p>
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">1</div>
+      <h3>Start</h3>
+      <p>Tap the button or press your Bluetooth remote</p>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <h3>Speak</h3>
+      <p>Talk naturally — Bablix detects the language automatically</p>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <h3>Listen</h3>
+      <p>The translation appears and is spoken aloud in the other language</p>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<div class="section-alt">
+<section>
+  <h2>Features</h2>
+  <p class="section-sub">Everything you need for real conversations</p>
+  <div class="features-grid">
+    <div class="feature-card">
+      <div class="icon-f">🎙</div>
+      <h3>On-Device Recognition</h3>
+      <p>WhisperKit speech recognition runs entirely on your iPhone. Fast, private, no internet needed for listening.</p>
+    </div>
+    <div class="feature-card">
+      <div class="icon-f">🌍</div>
+      <h3>10 Languages</h3>
+      <p>English, Chinese, Spanish, French, German, Japanese, Korean, Portuguese, Italian, and Arabic.</p>
+    </div>
+    <div class="feature-card">
+      <div class="icon-f">💬</div>
+      <h3>Conversation Timeline</h3>
+      <p>iMessage-style bubbles show both sides of the conversation with color-coded speakers.</p>
+    </div>
+    <div class="feature-card">
+      <div class="icon-f">🔊</div>
+      <h3>Auto Text-to-Speech</h3>
+      <p>Translations are spoken aloud automatically so both people can follow along.</p>
+    </div>
+    <div class="feature-card">
+      <div class="icon-f">✨</div>
+      <h3>AI Refinement</h3>
+      <p>Claude AI polishes speech recognition errors for cleaner, more accurate translations.</p>
+    </div>
+    <div class="feature-card">
+      <div class="icon-f">🤖</div>
+      <h3>"Hey Claude" Assistant</h3>
+      <p>Ask Claude questions mid-conversation. "Hey Claude, how do you say this formally?"</p>
+    </div>
+    <div class="feature-card">
+      <div class="icon-f">🎧</div>
+      <h3>Bluetooth Remote</h3>
+      <p>Hands-free control with a shutter remote. Two remotes let each person control their own translations.</p>
+    </div>
+    <div class="feature-card">
+      <div class="icon-f">📝</div>
+      <h3>Session Transcripts</h3>
+      <p>Every conversation is saved. Review, share, or export transcripts anytime.</p>
+    </div>
+  </div>
+</section>
+</div>
+
+<!-- USE CASES -->
+<section>
+  <h2>Perfect For</h2>
+  <p class="section-sub">A personal interpreter in your pocket</p>
+  <div class="use-cases">
+    <div class="use-case">
+      <span class="emoji">💑</span>
+      Couples &amp; families who speak different languages
+    </div>
+    <div class="use-case">
+      <span class="emoji">✈️</span>
+      Travel &amp; navigating conversations abroad
+    </div>
+    <div class="use-case">
+      <span class="emoji">📚</span>
+      Language learners practicing with native speakers
+    </div>
+    <div class="use-case">
+      <span class="emoji">💼</span>
+      Business meetings across language barriers
+    </div>
+  </div>
+</section>
+
+<!-- PRIVACY -->
+<div class="section-alt">
+<section>
+  <h2>Privacy First</h2>
+  <p class="section-sub">Your conversations stay yours</p>
+  <div class="privacy-points">
+    <div class="privacy-point">
+      <div class="icon-p">🔒</div>
+      <h3>On-Device Processing</h3>
+      <p>Speech recognition runs locally. Audio never leaves your phone.</p>
+    </div>
+    <div class="privacy-point">
+      <div class="icon-p">🚫</div>
+      <h3>No Tracking</h3>
+      <p>No analytics, no ads, no data collection of any kind.</p>
+    </div>
+    <div class="privacy-point">
+      <div class="icon-p">🔑</div>
+      <h3>Secure Storage</h3>
+      <p>API keys stored in iOS Keychain. Transcripts saved locally.</p>
+    </div>
+  </div>
+</section>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-links">
+    <a href="support.html">Support</a>
+    <a href="privacy-policy.html">Privacy Policy</a>
+    <a href="mailto:support@bablix.ai">Contact</a>
+  </div>
+  <p>&copy; 2026 Bablix. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
