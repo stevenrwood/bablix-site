@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bablix — Privacy Policy</title>
+<style>
+  body {
+    font-family: -apple-system, system-ui, sans-serif;
+    line-height: 1.7;
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 24px 20px 60px;
+    color: #1c1c1e;
+    background: #fff;
+  }
+  h1 { font-size: 28px; margin-bottom: 4px; }
+  h2 { font-size: 20px; margin-top: 32px; }
+  .updated { font-size: 14px; color: #8e8e93; margin-bottom: 32px; }
+  p, li { font-size: 15px; margin-bottom: 8px; }
+  ul { padding-left: 20px; }
+  a { color: #007aff; }
+</style>
+</head>
+<body>
+
+<h1>Bablix — Privacy Policy</h1>
+<p class="updated">Last updated: March 25, 2026</p>
+
+<p>Bablix is a real-time speech translation app for iOS. Your privacy matters to us. This policy explains what data the app accesses, how it is used, and what is shared with third parties.</p>
+
+<h2>Data That Stays on Your Device</h2>
+<p>The following data is stored locally on your device and is never transmitted to any server:</p>
+<ul>
+  <li><strong>Session transcripts</strong> — All conversation transcripts are saved as files in the app's private storage on your device.</li>
+  <li><strong>App settings</strong> — Language preferences, color choices, speech settings, and other configuration are stored in local app storage.</li>
+  <li><strong>Claude API key</strong> — If you provide an API key, it is stored in the iOS Keychain, Apple's secure on-device credential storage. It is never logged, displayed in plain text after entry, or transmitted anywhere except to Anthropic's API to authenticate your requests.</li>
+  <li><strong>Speech model</strong> — The WhisperKit speech recognition model is downloaded once and stored on your device. All speech recognition runs locally on your device.</li>
+</ul>
+
+<h2>Microphone and Speech Recognition</h2>
+<p>Bablix requests access to your device's microphone and speech recognition capabilities. Audio from the microphone is processed <strong>on your device</strong> by the WhisperKit speech model to convert speech to text. Audio is not recorded, stored, or transmitted. Only the resulting text is used for translation.</p>
+<p>When background recording is enabled, Apple's on-device speech recognition (SFSpeechRecognizer) may also be used to capture ambient conversation context. This processing also occurs entirely on your device.</p>
+
+<h2>Data Sent to Third Parties</h2>
+
+<h3>Anthropic (Claude API)</h3>
+<p>When you use any of the following features, the recognized text is sent to Anthropic's API for processing:</p>
+<ul>
+  <li><strong>Claude translation engine</strong> — If you select Claude as your translation engine, recognized speech text is sent for translation.</li>
+  <li><strong>Refine</strong> — When you refine a transcript entry, the text is sent for grammar and accuracy correction.</li>
+  <li><strong>"Hey Claude" AI assistant</strong> — When you use the wake phrase, your question is sent to Claude for a response.</li>
+</ul>
+<p>Only the text of your speech is transmitted — never raw audio. Your API key authenticates these requests. Anthropic's use of this data is governed by <a href="https://www.anthropic.com/privacy">Anthropic's Privacy Policy</a>. Under Anthropic's API terms, data sent via the API is not used to train their models.</p>
+
+<h3>Apple Translation</h3>
+<p>When you use Apple Translation as your engine, translation is handled by Apple's on-device and server-side translation framework. This is governed by <a href="https://www.apple.com/legal/privacy/">Apple's Privacy Policy</a>.</p>
+
+<h3>Hugging Face</h3>
+<p>On first launch, the WhisperKit speech recognition model is downloaded from Hugging Face's servers. This is a one-time download. No personal data is sent in this request.</p>
+
+<h2>No Analytics or Tracking</h2>
+<p>Bablix does not include any analytics frameworks, crash reporting services, advertising SDKs, or tracking of any kind. We do not collect usage data, device identifiers, or behavioral information.</p>
+
+<h2>No Account Required</h2>
+<p>Bablix does not require you to create an account. The optional Claude API key is your own Anthropic account credential, managed entirely by you.</p>
+
+<h2>Children's Privacy</h2>
+<p>Bablix is not directed at children under 13 and does not knowingly collect personal information from children.</p>
+
+<h2>Changes to This Policy</h2>
+<p>If we update this policy, the revised version will be posted at this URL with an updated date. Continued use of the app after changes constitutes acceptance of the updated policy.</p>
+
+<h2>Contact</h2>
+<p>If you have questions about this privacy policy, contact us at: <a href="mailto:bablix@stevenrwood.com">bablix@stevenrwood.com</a></p>
+
+</body>
+</html>
