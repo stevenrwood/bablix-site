@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bablix — Real-Time Speech Translation</title>
+<meta name="description" content="Bablix turns your iPhone into a real-time conversation translator. Speak naturally, translate instantly.">
+<style>
+  :root { color-scheme: light dark; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: -apple-system, system-ui, 'Helvetica Neue', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(145deg, #f8f9fa 0%, #e8edf2 100%);
+    color: #1c1c1e;
+    padding: 24px;
+    text-align: center;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body {
+      background: linear-gradient(145deg, #1c1c1e 0%, #2c2c2e 100%);
+      color: #f2f2f7;
+    }
+    .tagline { color: #a1a1a6; }
+    .features li { background: #2c2c2e; border-color: #3a3a3c; }
+    .email a { color: #64d2ff; }
+    footer { color: #636366; }
+  }
+
+  .icon {
+    width: 120px;
+    height: 120px;
+    border-radius: 27px;
+    margin-bottom: 24px;
+    background: linear-gradient(135deg, #007AFF 0%, #FF3B30 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 32px rgba(0, 122, 255, 0.2);
+  }
+
+  .icon svg {
+    width: 64px;
+    height: 64px;
+    fill: white;
+  }
+
+  h1 {
+    font-size: 48px;
+    font-weight: 700;
+    letter-spacing: -1px;
+    margin-bottom: 8px;
+  }
+
+  .tagline {
+    font-size: 20px;
+    color: #636366;
+    margin-bottom: 32px;
+    max-width: 480px;
+    line-height: 1.5;
+  }
+
+  .badge {
+    display: inline-block;
+    background: linear-gradient(135deg, #007AFF, #5856D6);
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 8px 20px;
+    border-radius: 20px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    margin-bottom: 40px;
+  }
+
+  .features {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+    max-width: 600px;
+    margin-bottom: 40px;
+  }
+
+  .features li {
+    background: white;
+    border: 1px solid #e5e5ea;
+    border-radius: 12px;
+    padding: 12px 18px;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .features .icon-sm {
+    font-size: 18px;
+    width: 24px;
+    text-align: center;
+    flex-shrink: 0;
+  }
+
+  .email {
+    font-size: 16px;
+    margin-bottom: 12px;
+  }
+
+  .email a {
+    color: #007AFF;
+    text-decoration: none;
+  }
+
+  .email a:hover {
+    text-decoration: underline;
+  }
+
+  footer {
+    margin-top: 48px;
+    font-size: 13px;
+    color: #8e8e93;
+  }
+
+  footer a {
+    color: inherit;
+    text-decoration: underline;
+  }
+</style>
+</head>
+<body>
+
+<div class="icon">
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H5.2L4 17.2V4h16v12z" opacity="0.7"/>
+    <path d="M19 3H9c-1.1 0-2 .9-2 2v8c0 1.1.9 2 2 2h6l4 4V5c0-1.1-.9-2-2-2zm0 11.2L17.8 13H9V5h10v9.2z"/>
+  </svg>
+</div>
+
+<h1>Bablix</h1>
+
+<p class="tagline">Real-time speech translation for live conversations. Speak naturally — Bablix listens, translates, and speaks the result.</p>
+
+<div class="badge">Coming Soon to the App Store</div>
+
+<ul class="features">
+  <li><span class="icon-sm">🎙</span> On-device speech recognition</li>
+  <li><span class="icon-sm">🌍</span> 10 languages supported</li>
+  <li><span class="icon-sm">💬</span> iMessage-style conversation timeline</li>
+  <li><span class="icon-sm">🔊</span> Auto text-to-speech</li>
+  <li><span class="icon-sm">🤖</span> AI-powered refinement &amp; assistant</li>
+  <li><span class="icon-sm">🔒</span> Privacy-first — no tracking, no analytics</li>
+</ul>
+
+<p class="email">Questions? <a href="mailto:support@bablix.ai">support@bablix.ai</a></p>
+
+<footer>
+  <a href="privacy-policy.html">Privacy Policy</a>
+</footer>
+
+</body>
+</html>
